@@ -1,0 +1,27 @@
+<nav>
+    <div class="nav-wrapper blue lighten-1">
+        <a href="#" class="brand-logo white-text">School Support</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">MENU</i></a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#">Étudiants</a></li>
+            <li><a href="#">Professeurs</a></li>
+            <li><a (click)="goToFilieres()">Filières</a></li>
+            <li><a href="#">Modules</a></li>
+            <li><a href="#">Classes</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Se connecter</a></li>
+        </ul>
+    </div>
+</nav>
+<!-- <ul class="sidenav" id="mobile-demo">
+    <li><a href="#">Accueil</a></li>
+    <li><a href="#">Étudiants</a></li>
+    <li><a href="#">Professeurs</a></li>
+    <li><a href="#">Filières</a></li>
+    <li><a href="#">Modules</a></li>
+    <li><a href="#">Classes</a></li>
+    <li><a href="#">Contact</a></li>
+</ul> -->
+
+<router-outlet></router-outlet>
