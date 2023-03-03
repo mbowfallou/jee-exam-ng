@@ -12,13 +12,15 @@ import { ModuleModule } from './module/module.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ContactComponent } from './contact/contact.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
     WelcomeComponent,
-    ContactComponent
+    ContactComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

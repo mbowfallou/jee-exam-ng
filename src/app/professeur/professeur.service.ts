@@ -26,6 +26,13 @@ export class ProfesseurService {
     );
   }
 
+  getProfByCredentials(username: string, password: string): Observable<any> {
+    return this.http.get<any>(`${this.API_URL}/account/${username}/${password}`).pipe(
+      tap((role) => this.log(role)),
+      catchError((error) => this.handleError(error, undefined))
+    );
+  }
+
   addProfessor(professor: Professor): Observable<Professor> {
     const httpOptions = {
       headers: new HttpHeaders({'Content-Type': 'application/json'})

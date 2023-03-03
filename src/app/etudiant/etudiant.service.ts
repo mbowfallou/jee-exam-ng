@@ -25,6 +25,13 @@ export class EtudiantService {
     );
   }
 
+  getEtudiantByCredentials(username: string, password: string): Observable<any> {
+    return this.http.get<any>(`${this.API_URL}/account/${username}/${password}`).pipe(
+      tap((role) => this.log(role)),
+      catchError((error) => this.handleError(error, undefined))
+    );
+  }
+
   addStudent(student: Student): Observable<Student> {
     const httpOptions = {
       headers: new HttpHeaders({'Content-Type': 'application/json'})

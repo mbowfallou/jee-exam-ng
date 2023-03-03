@@ -33,4 +33,8 @@ export class AppComponent {
   goContact(){
     this.router.navigate(['/contact']);
   }
+
+  goToAuth(){
+    this.router.navigate(['/auth']);
+  }
 }
