@@ -24,15 +24,23 @@
                             </tr>
                             <tr>
                                 <td>Etat: </td>
-                                <td><strong>{{ professor.etat }}</strong></td>
+                                <td *ngIf="professor.etat == 0"><strong>Inactif</strong></td>
+                                <td *ngIf="professor.etat == 1"><strong>Actif</strong></td>
                             </tr>
+                            <tr *ngIf="professor.modules.length>0">
+                                <td>Modules : </td>
+                                <td>
+                                    <span *ngFor="let module of professor.modules"> <li>{{ module }}</li> </span>
+                                </td>
+                            </tr>
+                            <tr *ngIf="professor.modules.length <= 0"><td>Modules : <span>Aucun pour ce Prof</span> </td></tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="card-action">
-                    <a (click)="goToProfessorList()">Retour</a>
-                    <a (click)="goToEditProfessor(professor)">Editer</a>
-                    <a (click)="deleteProfessor(professor)">Supprimer</a>
+                    <a style="cursor: pointer;" (click)="goToProfessorList()">Retour</a>
+                    <a style="cursor: pointer;" (click)="goToEditProfessor(professor)">Editer</a>
+                    <a style="cursor: pointer;" (click)="deleteProfessor(professor)">Supprimer</a>
                 </div>
             </div>
         </div>

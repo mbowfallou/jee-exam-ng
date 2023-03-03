@@ -6,6 +6,7 @@ export class Professor {
     email: string;
     password: string;
     etat: number;
+    modules: string[];
   
     constructor(
       nom = "Nom",

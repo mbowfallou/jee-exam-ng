@@ -1,8 +1,7 @@
-<h2 class="center">Liste des Etudiants</h2>
-
+<h2 class="center" style="margin-top: 90px;">Liste des Etudiants</h2>
+<!-- 
 <div class="container">
     <div class="row">
-        <!-- <app-search-student></app-search-student> -->
         <div *ngFor="let student of studentList" class="col m4 s6">
             <div class="card horizontal" (click)="goToStudent(student)" pkmnBorderCard>
                 <div class="card-stacked">
@@ -10,18 +9,49 @@
                         <p>Nom: {{ student.nom }}</p>
                         <p>Prénom: {{ student.prenom }}</p>
                         <p>Adresse: {{ student.adresse }}</p>
-                        <p>Email: {{ student.email }}</p> 
-                        <!-- <p>Classe: {{ student.classe }}</p>  -->
+                        <p>Email: {{ student.email }}</p>
                         <p>Filière: {{ student.filiere_id }}</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div> -->
+<div class="container">
+    <table class="striped highlight responsive-table" style="margin-bottom: 50px;">
+        <thead class="light-blue" style="color: white;">
+            <tr>
+                <th>Nom</th>
+                <th>Prénom(s)</th>
+                <th>Adresse</th>
+                <th>Email</th>
+                <th>Filière</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let student of studentList">
+                <td (click)="goToStudent(student)" pkmnBorderCard>                    
+                    {{ student.nom }}
+                </td>
+                <td (click)="goToStudent(student)" pkmnBorderCard>                    
+                    {{ student.prenom }}
+                </td>
+                <td (click)="goToStudent(student)" pkmnBorderCard>  
+                    {{ student.adresse }}
+                </td>
+                <td (click)="goToStudent(student)" pkmnBorderCard>   
+                    {{ student.email }}
+                </td>
+                <td (click)="goToStudent(student)" pkmnBorderCard>   
+                    {{ student.filiere_name }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 
-<a class="btn-floating btn-large waves-effect waves-light green z-depth-3" 
-    style="position: fixed; bottom: 25px; right: 25px;"
-    routerLink="/etudiant/add">
+<a class="btn-floating btn-large waves-effect waves-light green z-depth-3"
+    style="position: fixed; bottom: 25px; right: 25px;" routerLink="/etudiant/add">
     ➕
 </a>

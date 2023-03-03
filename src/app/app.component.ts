@@ -9,6 +9,10 @@ export class AppComponent {
 
   constructor(private router: Router){ }
 
+  goHome() {
+    this.router.navigate(['']);
+  }
+
   goToFilieres() {
     this.router.navigate(['/filiere']);
     
@@ -24,5 +28,9 @@ export class AppComponent {
 
   goToProfessors(){
     this.router.navigate(['/professeur']);
+  }
+
+  goContact(){
+    this.router.navigate(['/contact']);
   }
 }

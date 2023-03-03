@@ -7,23 +7,23 @@
                     <table class="bordered striped">
                         <tbody>
                             <tr>
-                                <td>Nom</td>
+                                <td>Nom : </td>
                                 <td><strong>{{ filiere.name }}</strong></td>
                             </tr>
-                            <!-- <tr>
-                                <td>Modules</td>
+                            <tr *ngIf="filiere.modules.length>0">
+                                <td>Modules : </td>
                                 <td>
-                                    <span *ngFor="let module of filiere.modules" class="{{ module.name | filiereTypeColor }}">{{
-                                        module.name }}</span>
+                                    <span *ngFor="let module of filiere.modules"> <li>{{ module }}</li> </span>
                                 </td>
-                            </tr> -->
+                            </tr>
+                            <tr *ngIf="filiere.modules.length <= 0"><td>Modules : <span>Aucun pour cette filière</span> </td></tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="card-action">
-                    <a (click)="goToFiliereList()">Retour</a>
-                    <a (click)="goToEditFiliere(filiere)">Editer</a>
-                    <a (click)="deleteFiliere(filiere)">Supprimer</a>
+                    <a style="cursor: pointer;" (click)="goToFiliereList()">Retour</a>
+                    <a style="cursor: pointer;" (click)="goToEditFiliere(filiere)">Editer</a>
+                    <a style="cursor: pointer;" class="btn disabled">Supprimer</a>
                 </div>
             </div>
         </div>

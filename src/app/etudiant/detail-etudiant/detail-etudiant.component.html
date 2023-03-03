@@ -28,15 +28,15 @@
                             </tr> -->
                             <tr>
                                 <td>Filière: </td>
-                                <td><strong>{{ student.filiere_id }}</strong></td>
+                                <td><strong>{{ student.filiere_name }}</strong></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="card-action">
-                    <a (click)="goToStudentList()">Retour</a>
-                    <a (click)="goToEditStudent(student)">Editer</a>
-                    <a (click)="deleteStudent(student)">Supprimer</a>
+                    <a style="cursor: pointer;"  (click)="goToStudentList()">Retour</a>
+                    <a style="cursor: pointer;"  (click)="goToEditStudent(student)">Editer</a>
+                    <a style="cursor: pointer;"  (click)="deleteStudent(student)">Supprimer</a>
                 </div>
             </div>
         </div>

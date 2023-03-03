@@ -11,12 +11,14 @@ import { FiliereModule } from './filiere/filiere.module';
 import { ModuleModule } from './module/module.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

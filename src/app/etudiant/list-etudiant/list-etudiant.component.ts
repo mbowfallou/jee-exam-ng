@@ -14,9 +14,7 @@ export class ListEtudiantComponent implements OnInit {
 
   constructor(private router: Router, private etudiantService: EtudiantService){}
 
-  ngOnInit(): void {
-    console.log(this.etudiantService.getStudentList().subscribe(studentList => studentList));
-    
+  ngOnInit(): void {    
     this.etudiantService.getStudentList()
       .subscribe(studentList => this.studentList = studentList);
   }
@@ -24,4 +22,11 @@ export class ListEtudiantComponent implements OnInit {
   goToStudent(student: Student) {
     this.router.navigate(['/etudiant', student.id]);
   }
+
+  // getFiliere(student: Student){
+  //   if (student.filiere_id) {
+  //     this.filiereService.getFiliereById(+filiereId)
+  //       .subscribe(fil => this.filiere = fil);
+  //   }
+  // }
 }

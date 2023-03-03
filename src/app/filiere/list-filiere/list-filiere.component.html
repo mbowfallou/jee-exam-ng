@@ -1,4 +1,4 @@
-<h2 class="center">Liste des Filières</h2>
+<h2 class="center" style="margin-top: 90px;">Liste des Filières</h2>
 
 <div class="container">
     <div class="row">
@@ -8,9 +8,7 @@
                 <div class="card-stacked">
                     <div class="card-content">
                         <p>{{ filiere.name }}</p>
-                        <!-- <span *ngFor="let module of filiere.modules" class="{{ type | filiereTypeColor }}">
-                            {{ module.name }} }}
-                        </span> -->
+                        <span *ngFor="let module of filiere.modules"> {{ module }}, </span>
                     </div>
                 </div>
             </div>
