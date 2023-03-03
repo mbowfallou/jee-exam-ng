@@ -1,0 +1,41 @@
+<div *ngIf="professor" class="row">
+    <div class="col s12 m8 offset-m2">
+        <h2 class="header center">{{ professor.nom }} {{ professor.prenom }}</h2>
+        <div class="card horizontal hoverable">
+            <div class="card-stacked">
+                <div class="card-content">
+                    <table class="bordered striped">
+                        <tbody>
+                            <tr>
+                                <td>Nom: </td>
+                                <td><strong>{{ professor.nom }}</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Prénom(s): </td>
+                                <td><strong>{{ professor.prenom }}</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Adresse: </td>
+                                <td><strong>{{ professor.adresse }}</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Email : </td>
+                                <td><strong>{{ professor.email }}</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Etat: </td>
+                                <td><strong>{{ professor.etat }}</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-action">
+                    <a (click)="goToProfessorList()">Retour</a>
+                    <a (click)="goToEditProfessor(professor)">Editer</a>
+                    <a (click)="deleteProfessor(professor)">Supprimer</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<h4 *ngIf='!professor' class="center">Aucun Professeur à afficher !</h4>

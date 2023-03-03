@@ -8,7 +8,6 @@ import { FiliereFormComponent } from './filiere-form/filiere-form.component';
 import { SearchFiliereComponent } from './search-filiere/search-filiere.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { FiliereService } from './filiere.service';
 
 const filiereRoutes: Routes = [
   {path:'filiere/edit/:id', component: EditFiliereComponent},

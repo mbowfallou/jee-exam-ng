@@ -11,7 +11,6 @@ import { FiliereModule } from './filiere/filiere.module';
 import { ModuleModule } from './module/module.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { FiliereService } from './filiere/filiere.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +28,7 @@ import { FiliereService } from './filiere/filiere.service';
     ModuleModule,
     AppRoutingModule
   ],
-  providers: [FiliereService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

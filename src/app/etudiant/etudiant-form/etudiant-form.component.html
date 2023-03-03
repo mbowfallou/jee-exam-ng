@@ -1,0 +1,83 @@
+<form  (ngSubmit)="onSubmit()" #filiereForm="ngForm">
+    <div class="row">
+        <div class="col s8 offset-s2">
+            <div class="card-panel">
+
+                <!-- Student name -->
+                <div class="form-group">
+                    <label for="name">Nom</label>
+                    <input type="text" class="form-control" id="name" required pattern="^[a-zA-Z0-9.\sàéèç]{1,100}$"
+                        [(ngModel)]="student.nom" name="nom" #nom="ngModel">
+
+                    <div [hidden]="nom.valid || nom.pristine" class="card-panel red accent-1">
+                        Le nom de l'étudiant est requis (1-100).
+                    </div>
+                </div>
+                <!-- Student name -->
+                <div class="form-group">
+                    <label for="name">Prénom(s)</label>
+                    <input type="text" class="form-control" id="name" required pattern="^[a-zA-Z0-9.\sàéèç]{1,100}$"
+                        [(ngModel)]="student.prenom" name="prenom" #prenom="ngModel">
+
+                    <div [hidden]="prenom.valid || prenom.pristine" class="card-panel red accent-1">
+                        Le prénom de l'étudiant est requis (1-100).
+                    </div>
+                </div>
+                <!-- Student name -->
+                <div class="form-group">
+                    <label for="name">Adresse</label>
+                    <input type="text" class="form-control" id="name" pattern="^[a-zA-Z0-9.\sàéèç]{1,100}$"
+                        [(ngModel)]="student.adresse" name="adresse" #adresse="ngModel">
+
+                    <div [hidden]="adresse.valid || adresse.pristine" class="card-panel red accent-1">
+                        L'adresse de l'étudiant est requis (1-150).
+                    </div>
+                </div>
+                <!-- Student name -->
+                <div class="form-group">
+                    <label for="name">Email</label>
+                    <input type="text" class="form-control" id="name" required pattern="^[a-zA-Z0-9@.\sàéèç]{1,100}$"
+                        [(ngModel)]="student.email" name="email" #email="ngModel">
+
+                    <div [hidden]="email.valid || email.pristine" class="card-panel red accent-1">
+                        L'email de l'étudiant est requis (1-150).
+                    </div>
+                </div>
+                <!-- Student Classe -->
+                <!-- <div class="form-group">
+                    <label for="name">Niveau</label>
+                    <input type="text" class="form-control" id="name" required pattern="^[a-zA-Z0-9\sàéèç]{1,100}$"
+                        [(ngModel)]="student.nom" name="nom" #nom="ngModel">
+
+                    <div [hidden]="nom.valid || nom.pristine" class="card-panel red accent-1">
+                        Le nom de l'étudiant est requis (1-100).
+                    </div>
+                </div> -->
+                <!-- Student name -->
+                <div class="form-group">
+                    <label for="name">Filière</label>
+                    <input type="text" class="form-control" id="name" required pattern="^[a-zA-Z0-9.\sàéèç]{1,100}$"
+                        [(ngModel)]="student.filiere_id" name="filiere_id" #filiere_id="ngModel">
+
+                    <div [hidden]="filiere_id.valid || filiere_id.pristine" class="card-panel red accent-1">
+                        Le nom de la filière est requis (1-100).{{student}}
+                    </div>
+                </div>
+
+                <!-- Submit button -->
+                <div class="divider"></div>
+                <div class="section center">
+                    <a class="waves-effect waves-light btn" style="margin-right: 10px;"
+                        (click)="goToStudentList()">
+                        Retour
+                    </a>
+                    <button type="submit" class="waves-effect waves-light btn" [disabled]="!filiereForm.form.valid">
+                        Valider
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>
+<h3 *ngIf="!student" class="center">Aucun Etudiant à éditer...</h3>

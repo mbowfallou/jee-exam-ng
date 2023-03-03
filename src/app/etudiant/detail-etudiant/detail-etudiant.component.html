@@ -1,0 +1,45 @@
+<div *ngIf="student" class="row">
+    <div class="col s12 m8 offset-m2">
+        <h2 class="header center">{{ student.nom }} {{ student.prenom }}</h2>
+        <div class="card horizontal hoverable">
+            <div class="card-stacked">
+                <div class="card-content">
+                    <table class="bordered striped">
+                        <tbody>
+                            <tr>
+                                <td>Nom: </td>
+                                <td><strong>{{ student.nom }}</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Prénom(s): </td>
+                                <td><strong>{{ student.prenom }}</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Adresse: </td>
+                                <td><strong>{{ student.adresse }}</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Email : </td>
+                                <td><strong>{{ student.email }}</strong></td>
+                            </tr>
+                            <!-- <tr>
+                                <td>Niveau: </td>
+                                <td><strong>{{ student.classe }}</strong></td>
+                            </tr> -->
+                            <tr>
+                                <td>Filière: </td>
+                                <td><strong>{{ student.filiere_id }}</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-action">
+                    <a (click)="goToStudentList()">Retour</a>
+                    <a (click)="goToEditStudent(student)">Editer</a>
+                    <a (click)="deleteStudent(student)">Supprimer</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<h4 *ngIf='!student' class="center">Aucun Etudiant à afficher !</h4>

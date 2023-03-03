@@ -1,0 +1,27 @@
+<h2 class="center">Liste des Modules</h2>
+
+<div class="container">
+    <div class="row">
+        <app-search-module></app-search-module>
+        <div *ngFor="let module of moduleList" class="col m4 s6">
+            <div class="card horizontal" (click)="goToModule(module)" pkmnBorderCard>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <p>Nom: {{ module.name }}</p>
+                        <p>Jours: {{ module.jours }}</p>
+                        <p>Credit: {{ module.credit }}</p>
+                        <p>Quantum Horaire: {{ module.quantum }}</p>
+                        <p>Professeur: {{ module.professor_id }}</p>
+                        <p>Filière: {{ module.filiere_id }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a class="btn-floating btn-large waves-effect waves-light green z-depth-3" 
+    style="position: fixed; bottom: 25px; right: 25px;"
+    routerLink="/module/add">
+    ➕
+</a>

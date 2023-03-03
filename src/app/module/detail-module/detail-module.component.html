@@ -1,0 +1,45 @@
+<div *ngIf="module" class="row">
+    <div class="col s12 m8 offset-m2">
+        <h2 class="header center">{{ module.name }}</h2>
+        <div class="card horizontal hoverable">
+            <div class="card-stacked">
+                <div class="card-content">
+                    <table class="bordered striped">
+                        <tbody>
+                            <tr>
+                                <td>Nom</td>
+                                <td><strong>{{ module.name }}</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Jours</td>
+                                <td><strong>{{ module.jours }}</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Credit</td>
+                                <td><strong>{{ module.credit }}</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Quantum Horaire</td>
+                                <td><strong>{{ module.quantum }}</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Professeur</td>
+                                <td><strong>{{ module.professor_id }}</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Filière</td>
+                                <td><strong>{{ module.filiere_id }}</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-action">
+                    <a (click)="goToModuleList()">Retour</a>
+                    <a (click)="goToEditModule(module)">Editer</a>
+                    <a (click)="deleteModule(module)">Supprimer</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<h4 *ngIf='!module' class="center">Aucune Filière à afficher !</h4>

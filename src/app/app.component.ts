@@ -11,7 +11,18 @@ export class AppComponent {
 
   goToFilieres() {
     this.router.navigate(['/filiere']);
-    console.log('Filieeere');
     
+  }
+
+  goToModules(){
+    this.router.navigate(['/module']);
+  }
+
+  goToStudent(){
+    this.router.navigate(['/etudiant']);
+  }
+
+  goToProfessors(){
+    this.router.navigate(['/professeur']);
   }
 }
